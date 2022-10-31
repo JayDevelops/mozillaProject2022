@@ -1,0 +1,30 @@
+{
+
+  "manifest_version": 2,
+  "name": "StudyBox",
+  "version": "1.1",
+
+  "description": "StudyBox: an all inclusive study extension",
+  "icons": {
+    "48": "icons/studybox-48.png"
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "browser_action": {
+    "default_icon": {
+     "32" : "icons/studybox-32.png"
+    },
+    "default_title": "StudyBox",
+    "default_popup": "popup/studyboxnote.html"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "studybox@mozilla.org"
+    }
+  }
+
+}
