@@ -164,3 +164,5 @@ function clearAll() {
   }
   browser.storage.local.clear();
 }
+
+// TODO: play, pause lofi music
