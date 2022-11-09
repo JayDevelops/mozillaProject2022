@@ -36,3 +36,18 @@ we couldn't help each other as much as we wanted. In the future, meeting at leas
 a week as a group would help a lot. Also, setting soft and hard deadlines for certain
 deliverables would help a lot in streamlining the project. 
 
+Triage: 
+
+Final demo 
+
+1. Quick note's 
+2. Study timers ( ex. pomodoro ) 
+3. Inspirational quotes 
+4. Youtube or music background music 
+5. Add custom background such rain, cloud , cafe 
+6. Screen dimmer 
+7. Website restrictions ( most lilely won't be able to complete in time)
+8. Try to integrate to reactjs 
+
+
+
