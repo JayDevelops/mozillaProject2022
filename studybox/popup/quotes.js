@@ -10,7 +10,7 @@ fetch("https://type.fit/api/quotes")
 
         //  Change the quoteText to quote.text and quoteAuthor with the quote.author
         quoteText.innerText = quote.text;
-        quoteAuthor.innerText = quote.author;
+        quoteAuthor.innerText = quote.author === "null" ? `Anonymous` : `By ${quote.author}`;
         console.log(quote);
     })
     .catch(error => {
