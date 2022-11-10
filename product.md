@@ -20,12 +20,13 @@
 ### Technical Highlights
 Setting up the document and code base was a little harder for some of our group as they
 they code in macbook pros. Also, implementing our music background player was 
-really challenging as youtube does not let us embed a youtube video. Also, playing 
-music mp3 files due to api limitations. We decided to go big first, when we should have
+really challenging as youtube does not let us embed a youtube video, as well as even when implementing our solution we still 
+couldn't autoplay on firefox but autoplay does work on google chrome. 
+Also, playing music mp3 files due to api limitations. We decided to go big first, when we should have
 started simple components than gradually added harder components to the project
 to have a more diverse demo. Working in group's is defensively harder since time 
 management is different for everyone, thus working together was a little difficult 
-without creating a time management timeline. 
+without creating a time management timeline.
 
 Working on the project, everyone was able to contribute evenly. David was team leader,
 so dispersing responsibilities was easier. Working over zoom was definitely harder, as
