@@ -7,20 +7,20 @@ html {
   font-family: sans-serif;
   font-size: 10px;
   background: rgb(240,240,240);
-  height: 300px;
+  height: 800px;
   margin: 0;
 }
 body {
-  width: 300px;
+  width: 290px;
   background: #84A59D;
   margin: 0 auto;
-  padding: 2px;
+  padding: 0px;
   height: inherit;
 }
 
 .outer-wrapper {
   overflow: auto;
-  width: 100%;
+  width: 95%;
   height: 290px;
   background: #F7EDE2;
 }
