@@ -1,7 +1,7 @@
 // variables
 
 let worktitle = document.getElementById('work')
-let worktitle = document.getElementById('break')
+let breaktitle = document.getElementById('break')
 
 let workTime=25;
 let breakTime=5;
