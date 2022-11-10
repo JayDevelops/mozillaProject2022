@@ -14,7 +14,6 @@
 4. Inspirational quote
    - New quote retrieved from a free [API](https://type.fit/api/quotes)
 
-
 ### High-level Design
 ![DFD Diagram Level 0 detailing our project.](DFDDiagramLevelZero.png)
 
