@@ -133,7 +133,7 @@ function displayNote(title, body) {
     noteTitleEdit.value = title;
     noteBodyEdit.value = body;
   })
-  //change here
+
 
   updateBtn.addEventListener('click',() => {
     if(noteTitleEdit.value !== title || noteBodyEdit.value !== body) {
