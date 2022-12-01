@@ -8,8 +8,14 @@
   "icons": {
     "48": "icons/studybox-48.png"
   },
+  
+  "background":
+  {
+      "scripts": ["popup/background.js"]
+  },
 
   "permissions": [
+    "webNavigation",
     "storage"
   ],
 
@@ -17,8 +23,8 @@
     "default_icon": {
      "32" : "icons/studybox-32.png"
     },
-    "default_title": "StudyBox",
-    "default_popup": "popup/studyboxnote.html"
+    "default_title": "StudyBox"
+
   },
 
   "browser_specific_settings": {
