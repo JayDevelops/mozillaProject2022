@@ -134,6 +134,7 @@ function displayNote(title, body) {
     noteBodyEdit.value = body;
   })
 
+
   updateBtn.addEventListener('click',() => {
     if(noteTitleEdit.value !== title || noteBodyEdit.value !== body) {
       updateNote(title,noteTitleEdit.value,noteBodyEdit.value);

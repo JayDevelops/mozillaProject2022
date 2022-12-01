@@ -46,7 +46,7 @@ function start() {
                     workMinutes = breakMinutes;
                     breakCount++
 
-                    // change the painel
+                    // changing the painel
                     workTittle.classList.remove('active');
                     breakTittle.classList.add('active');
                 }else {
@@ -54,7 +54,7 @@ function start() {
                     workMinutes = workTime;
                     breakCount++
 
-                    // change the painel
+                    // changing the painel
                     breakTittle.classList.remove('active');
                     workTittle.classList.add('active');
                 }
