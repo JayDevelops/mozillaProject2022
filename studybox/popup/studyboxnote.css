@@ -4,8 +4,6 @@
 }
 
 html {
-  font-family: sans-serif;
-  font-size: 10px;
   height: 100%;
   margin: 0;
 }
@@ -19,21 +17,32 @@ i{
   cursor: pointer;
   position: absolute;
   top: 5%;
-  left: 95%;
+  left: 5%;
   transform: translate(-50%, -50%);
 }
-h1{
-  text-align: center;
-  font-size: 3em;
+.quoteContainer{
+
+  font-family: sans-serif;
+  font-size: 500px;
   position: absolute;
-  top: 1%;
-  left: 80%;
+  bottom: 40px;
+  left: 700px;
+  
+
+
+}
+.clockContainer{
+  font-family: sans-serif;
+  font-size: 100px;
+  position: absolute;
+  bottom: 150px;
+  left: 700px;
 }
 .outer-wrapper {
   overflow: auto;
   width: 15%;
   height: 500px;
-  background: #F7EDE2;
+  background: #1b9aaa;
   position: absolute;
   right: 10px;
   bottom: 350px;
@@ -47,8 +56,8 @@ h1{
   font-family: cursive;
   font-size: 20px;
   font-weight: 700;
-  background-color: #84A59D;
-  border: #84A59D;
+  background-color: #ffc43d;
+  border: #ffc43d;
   text-align: center;
 }
 
