@@ -1,21 +1,20 @@
 // variables
 
-let worktitle = document.getElementById('work')
-let breaktitle = document.getElementById('break')
+let workTitle = document.getElementById('work');
+let breakTitle = document.getElementById('break');
 
-let workTime=25;
-let breakTime=5;
+let workTime = 25;
+let breakTime = 5;
 
-let seconds = "00"
+let seconds = "00";
 
 // display
 
 window.onload = () => {
-    document.getElementById('minutes').innerHTML = workTime;
-    document.getElementById('seconds').innerHTML = seconds;
+    document.getElementById('minutes').textContent = String(workTime);
+    document.getElementById('seconds').textContent = seconds;
 
-    worktitle.classlist.add('active');
-    
+    workTitle.classList.add('active');
 }
 
 // starting timer
@@ -25,16 +24,16 @@ function start() {
     seconds=59;
 
     let workMinutes = workTime - 1;
-    let breakkMinutes = breakTime - 1;
+    let breakMinutes = breakTime - 1;
 
-    breakCount = 0;
+    let breakCount = 0;
 
     // countdown
 
     let timerFunction = () => {
 
-        document.getElementById('minutes').innerHTML = workMinutes;
-        document.getElementById('seconds').innerHTML = seconds;
+        document.getElementById('minutes').textContent = workMinutes;
+        document.getElementById('seconds').textContent = seconds;
 
         seconds = seconds - 1;
 
@@ -47,21 +46,20 @@ function start() {
                     breakCount++
 
                     // changing the painel
-                    workTittle.classList.remove('active');
-                    breakTittle.classList.add('active');
+                    workTitle.classList.remove('active');
+                    breakTitle.classList.add('active');
                 }else {
                     // continue work
                     workMinutes = workTime;
                     breakCount++
 
                     // changing the painel
-                    breakTittle.classList.remove('active');
-                    workTittle.classList.add('active');
+                    breakTitle.classList.remove('active');
+                    workTitle.classList.add('active');
                 }
             }
             seconds = 59;
     }
-
     setInterval(timerFunction, 1000);
 }
 
