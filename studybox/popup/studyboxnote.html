@@ -1,19 +1,23 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="../res/fontawesome/css/all.css" />
+
     <link rel="stylesheet" href="studyboxnote.css"/>
     <title>StudyBox</title>
 
-     <!--Fonts--> 
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
- 
-     <!-- ICONS -->
-     <script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
- 
+    
        <!-- Dark and Light Mode Toggle-->
        <script src="darkandblack.js" defer></script>
        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
@@ -43,18 +47,19 @@
 
   </div>
 
+  
 
-  <div class="audioContainer">
-      <audio id="audio">
-          <source src="lofi.mp3" type="audio/mp3">
-      </audio>
-      <button id="playPause" onclick="playPauseMusic()">Play &#9658;</button>
-      &nbsp;
-      &nbsp;
-      <button onclick="stopMusic()">Stop &#9611;</button>
-  </div>
+  <button id="play">Play</button>
+   <script>
+        let play = document.getElementById("play");
+            function playMusic() {
+             let audio = new Audio("/studyboc/popup/lofi.mp3");
+             audio.play()
+             console.log("its playing")
+          }
+          play.addEventListener("click", playMusic);
+   </script>
 
-  <script src="pomodoro.js"></script>
   <script src="studyboxnote.js"></script>
   <script src="quotes.js"></script>
   <script src="search.js"></script>
@@ -84,6 +89,58 @@
 <video autoplay loop muted plays-inline>
     <source src="" type="video/mp4">
 </video>
+
+<audio id="player" src="./lofi.mp3"></audio>
+<div class="player">
+  <div class="control">
+    <i class="fas fa-play" id="playbtn"></i>
+  </div>
+  <div class="info">
+    Lofi 
+    <div class="bar">
+      <div id="progress"></div>
+    </div>
+  </div>
+
+  <div id="current">0:00</div>
+</div>
+
+<script src="./player.js"></script>
+
+
+
+<figure class="clock">
+  <div class="mins">0</div>
+  <div>:</div>
+  <div class="secs">00</div>
+  <audio
+    src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
+  ></audio>
+  <svg class="progress-ring" height="120" width="120">
+    <circle
+      class="progress-ring__circle"
+      stroke-width="8"
+      fill="transparent"
+      r="50"
+      cx="60"
+      cy="60"
+    />
+  </svg>
+</figure>
+
+<div class="btn-group">
+  <button class="start">start focus</button>
+  <button class="reset">reset</button>
+  <button class="pause">pause</button>
+</div>
+
+
+
+
+<script src="settings.js"></script>
+<script src="pomodoro.js"></script>
+<script src="progress.js"></script>
+
 
 </body>
 
