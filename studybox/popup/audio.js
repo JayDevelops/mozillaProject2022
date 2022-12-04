@@ -15,11 +15,12 @@ function playPauseMusic() {
         audioFile.pause();
         playPause.textContent = "Play &#9658;";
     }
-    console.log("Play Pause button has been clicked")
+    console.log("Play Pause button has been clicked");
 }
 
 function stopMusic() {
     playPauseMusic();
+    console.log(count)
     audioFile.pause();
     audioFile.currentTime = 0;
     playPause.textContent = "Play &#9658;";
