@@ -11,8 +11,8 @@ let seconds = "00";
 // display
 
 window.onload = () => {
-    document.getElementById('minutes').textContent = String(workTime);
-    document.getElementById('seconds').textContent = seconds;
+    document.getElementById('pomodoroMinutes').textContent = String(workTime);
+    document.getElementById('pomodoroSeconds').textContent = seconds;
 
     workTitle.classList.add('active');
 }

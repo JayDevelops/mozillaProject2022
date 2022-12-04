@@ -13,11 +13,13 @@
  
      <!-- ICONS -->
      <script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
- 
-    
+
+      <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
   </head>
 
 <body>
+
+<i class="bi bi-brightness-high-fill" id="toggleDark"></i>
   <div class="outer-wrapper">
     <div class="title">STUDYBOX</div>
     <div class="new-note">
@@ -45,7 +47,7 @@
   </div>
 
   <section>
-    <div class="container">
+    <div class="pomodoroContainer">
         <h1>Pomodoro</h1>
 
         <div class = "painel">
@@ -56,9 +58,9 @@
         <div class = "timer">
             <div class = "circle">
                 <div class = "time">
-                    <p id="minutes">25</p>
+                    <p id="pomodoroMinutes">25</p>
                     <p>:</p>
-                    <p id="seconds">00</p>
+                    <p id="pomodoroSeconds">00</p>
                 </div>
             </div>
         </div>
@@ -81,11 +83,23 @@
       <button onclick="stopMusic()">Stop &#9611;</button>
   </div>
 
+  <div class="clockContainer">
+      <span id="hours">00</span>
+      <span>:</span>
+      <span id="minutes">00</span>
+      <span>:</span>
+      <span id="seconds">00</span>
+      <span id="session">AM</span>
+  </div>
+
   <script src="pomodoro.js"></script>
   <script src="studyboxnote.js"></script>
   <script src="quotes.js"></script>
   <script src="search.js"></script>
   <script src="audio.js"></script>
+  <script src="clock.js"></script>
+  <script src="darkandblack.js"></script>
+  <script src="video.js"></script>
 </body>
 
 </html>
