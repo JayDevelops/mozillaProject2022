@@ -1,66 +1,60 @@
-// variables
+const el = document.querySelector(".clock");
+const bell = document.querySelector("audio");
 
-let workTitle = document.getElementById('work');
-let breakTitle = document.getElementById('break');
+const mindiv = document.querySelector(".mins");
+const secdiv = document.querySelector(".secs");
 
-let workTime = 25;
-let breakTime = 5;
+const startBtn = document.querySelector(".start");
+localStorage.setItem("btn", "focus");
 
-let seconds = "00";
+let initial, totalsecs, perc, paused, mins, seconds;
 
-// display
+startBtn.addEventListener("click", () => {
+  let btn = localStorage.getItem("btn");
 
-window.onload = () => {
-    document.getElementById('pomodoroMinutes').textContent = String(workTime);
-    document.getElementById('pomodoroSeconds').textContent = seconds;
+  if (btn === "focus") {
+    mins = +localStorage.getItem("focusTime") || 1;
+  } else {
+    mins = +localStorage.getItem("breakTime") || 1;
+  }
 
-    workTitle.classList.add('active');
-}
+  seconds = mins * 60;
+  totalsecs = mins * 60;
+  setTimeout(decremenT(), 60);
+  startBtn.style.transform = "scale(0)";
+  paused = false;
+});
 
-// starting timer
+function decremenT() {
+  mindiv.textContent = Math.floor(seconds / 60);
+  secdiv.textContent = seconds % 60 > 9 ? seconds % 60 : `0${seconds % 60}`;
+  if (circle.classList.contains("danger")) {
+    circle.classList.remove("danger");
+  }
 
-function start() {
-    //change the time
-    seconds=59;
-
-    let workMinutes = workTime - 1;
-    let breakMinutes = breakTime - 1;
-
-    let breakCount = 0;
-
-    // countdown
-
-    let timerFunction = () => {
-
-        document.getElementById('minutes').textContent = workMinutes;
-        document.getElementById('seconds').textContent = seconds;
-
-        seconds = seconds - 1;
-
-        if(seconds === 0) {
-            workMinutes = workMinutes - 1;
-            if(workMinutes === -1 ){
-                if(breakCount % 2 === 0) {
-                    // start break
-                    workMinutes = breakMinutes;
-                    breakCount++
-
-                    // changing the painel
-                    workTitle.classList.remove('active');
-                    breakTitle.classList.add('active');
-                }else {
-                    // continue work
-                    workMinutes = workTime;
-                    breakCount++
-
-                    // changing the painel
-                    breakTitle.classList.remove('active');
-                    workTitle.classList.add('active');
-                }
-            }
-            seconds = 59;
+  if (seconds > 0) {
+    perc = Math.ceil(((totalsecs - seconds) / totalsecs) * 100);
+    setProgress(perc);
+    seconds--;
+    initial = window.setTimeout("decremenT()", 1000);
+    if (seconds < 10) {
+      circle.classList.add("danger");
     }
-    setInterval(timerFunction, 1000);
-}
+  } else {
+    mins = 0;
+    seconds = 0;
+    bell.play();
+    let btn = localStorage.getItem("btn");
 
+    if (btn === "focus") {
+      startBtn.textContent = "start break";
+      startBtn.classList.add("break");
+      localStorage.setItem("btn", "break");
+    } else {
+      startBtn.classList.remove("break");
+      startBtn.textContent = "start focus";
+      localStorage.setItem("btn", "focus");
+    }
+    startBtn.style.transform = "scale(1)";
+  }
 }

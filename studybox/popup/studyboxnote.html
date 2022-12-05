@@ -1,25 +1,37 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+
+
     <link rel="stylesheet" href="studyboxnote.css"/>
     <title>StudyBox</title>
 
-     <!--Fonts--> 
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
- 
-     <!-- ICONS -->
-     <script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
+    
+       <!-- Dark and Light Mode Toggle-->
+       <script src="darkandblack.js" defer></script>
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  
+       <!-- Clock-->
+       <script src="clock.js" defer></script>
 
-      <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
+       <script src="music.js" defer></script>
+    
   </head>
 
 <body>
 
-<i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+  <e class="bi bi-brightness-high-fill" id="toggleDark"></e>
+
   <div class="outer-wrapper">
     <div class="title">STUDYBOX</div>
     <div class="new-note">
@@ -34,72 +46,101 @@
  
     </div>
 
-    <div class="listen" style="text-align: center; padding-top: 10px">
-      <a href="https://www.youtube.com/watch?v=jfKfPfyJRdk?&autoplay=1">
-        <button>Start Lofi Playlist Here</button>
-      </a>
-    </div>
-
-    <div class="quoteContainer" style="text-align: center; padding-top:20px;">
-      <p id="quote"></p>
-      <p id="quoteAuthor"></p>
-    </div>
   </div>
 
-  <section>
-    <div class="pomodoroContainer">
-        <h1>Pomodoro</h1>
-
-        <div class = "painel">
-            <p id = "work">Work</p>
-            <p id = "break">Break</p>
-        </div>
-
-        <div class = "timer">
-            <div class = "circle">
-                <div class = "time">
-                    <p id="pomodoroMinutes">25</p>
-                    <p>:</p>
-                    <p id="pomodoroSeconds">00</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="controls">
-            <button id="start" onclick="start()"><i class="fa-solid fa-play"></i></button>
-
-            <a id="reset" href="/"><i class="fa-solid fa-arrow-rotate-left"></i></a>
-        </div>
-    </div>
-</section>
-
-  <div class="audioContainer">
-      <audio id="audio">
-          <source src="lofi.mp3" type="audio/mp3">
-      </audio>
-      <button id="playPause" onclick="playPauseMusic()">Play &#9658;</button>
-      &nbsp;
-      &nbsp;
-      <button onclick="stopMusic()">Stop &#9611;</button>
-  </div>
-
-  <div class="clockContainer">
-      <span id="hours">00</span>
-      <span>:</span>
-      <span id="minutes">00</span>
-      <span>:</span>
-      <span id="seconds">00</span>
-      <span id="session">AM</span>
-  </div>
-
-  <script src="pomodoro.js"></script>
+  
   <script src="studyboxnote.js"></script>
   <script src="quotes.js"></script>
   <script src="search.js"></script>
   <script src="audio.js"></script>
-  <script src="clock.js"></script>
-  <script src="darkandblack.js"></script>
-  <script src="video.js"></script>
+
+
+  <div class="quoteContainer" style="text-align: center; padding-top:20px;">
+    <p id="quote"></p>
+    <p id="quoteAuthor"></p>
+  </div>
+
+  <div class="clockContainer">
+    <span id="hours">00</span>
+    <span>:</span>
+    <span id="minutes">00</span>
+    <span>:</span>
+    <span id="seconds">00</span>
+    <span id="session">AM</span>
+</div>
+
+
+
+<video autoplay loop muted plays-inline>
+    <source src="" type="video/mp4">
+</video>
+
+
+
+<div class="pomodoWrapper">
+<div class="website">
+  
+
+  <div id="display" class="button">What to do?</div>
+
+  <div id="time">00:00</div>
+  
+  <div class="choice-grid">
+      <button id="work-btn" class="button choice-btn">Study</button>
+      <button id="short-break-btn" class="button choice-btn">Short break</button>
+      <button id="long-break-btn" class="button choice-btn">Long break</button>
+  </div>
+  <div class="footer">
+      <div id="message">❤️ Thank you for using this timer.</div>
+  </div>
+  <div class="footer">
+    <div>Studied for... <span id="total-time">0hr 0min</span></div>
+  </div>
+</div>
+
+
+<script src="timer.js"></script>
+
+</div>
+<div class="music-container" id="music-container">
+  <div class="music-info">
+    <div class="title-container">
+      <h4 id="title"></h4>
+      <span id="progress-time" class="progress-time"></span>
+    </div>
+    <div class="progress-container" id="progress-container">
+      <div class="progress" id="progress"></div>
+    </div>
+  </div>
+
+  <audio src="./studioghibli.mp3" id="audio"></audio>
+
+  <div class="img-container">
+    <img src="./studighibli.jpg" alt="-" id="cover" />
+  </div>
+
+  <div class="navigation">
+    <button id="prev" class="action-btn">
+      <i class="fas fa-backward"></i>
+    </button>
+    <button id="play" class="action-btn action-btn-big">
+      <i class="fas fa-play"></i>
+    </button>
+    <button id="next" class="action-btn">
+      <i class="fas fa-forward"></i>
+    </button>
+  </div>
+</div>
+
+<div class="playlist-container" id="playlist-container">
+  <h4>Playlist</h4>
+  <ul class="playlist" id="playlist"></ul>
+</div>
+
+<script src="music.js"></script>
+
+
+
 </body>
 
 </html>
