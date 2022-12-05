@@ -23,7 +23,7 @@ body {
 }
 
 .leftContent, .rightContent {
-  width: 20%; /* The width is 20%, by default */
+  width: 30%; /* The width is 20%, by default */
 }
 
 .middleContent {
@@ -222,13 +222,13 @@ e{
 }
 
 .clear{
-  background: #ffd103;
+  background: #FFB400;
 }
 
 .add
 {
   
-    background: #ffd103;
+    background: #FFB400;
   
 }
 
@@ -251,8 +251,8 @@ e{
   font-family: cursive;
   font-size: 20px;
   font-weight: 700;
-  background-color: #ffc43d;
-  border: #ffc43d;
+  background-color: #FFB400;
+  border: #FFB400;
   text-align: center;
 }
 
@@ -280,16 +280,17 @@ textarea {
   width: 100%;
   margin-bottom: 4px;
   resize: none;
+  background-color: #FFB400;
 }
 
 .clear {
   float: left;
-  background: #ffd103;
+  background: #FFB400;
 }
 
 .add {
   float: right;
-  background: #ffd103;
+  background: #FFB400;
 }
 .note {
   padding: 2px;
@@ -297,7 +298,7 @@ textarea {
 
 .delete {
   float: right;
-  background: #ffd103;
+  background: #FFB400;
 }
 
 p {
@@ -306,12 +307,12 @@ p {
 
 .cancel {
   float: left;
-  background: #ffd103;
+  background: #FFB400;
 }
 
 .update {
   float: right;
-  background: #ffd103;
+  background: #FFB400;
 }
 
 
@@ -324,7 +325,7 @@ p {
 }
 
 .pomodoroWrapper {
-  height: 350px;
+  height: 400px;
 }
 
 .website {
@@ -333,11 +334,11 @@ p {
 
   overflow: auto;
   width: 25%;
-  height: 400px;
+  height: 500px;
   background: #FFB400;
   position: absolute;
   left:10px;
-  bottom: 400px;
+  bottom: 300px;
 }
 
 .container {
