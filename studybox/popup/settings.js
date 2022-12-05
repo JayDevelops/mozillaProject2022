@@ -1,4 +1,3 @@
-
 const focusTimeInput = document.querySelector("#focusTime");
 const breakTimeInput = document.querySelector("#breakTime");
 const pauseBtn = document.querySelector(".pause");

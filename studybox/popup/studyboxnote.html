@@ -6,13 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+   
     <link
     rel="stylesheet"
-    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-    crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
   />
-  <link rel="stylesheet" href="../res/fontawesome/css/all.css" />
+
 
     <link rel="stylesheet" href="studyboxnote.css"/>
     <title>StudyBox</title>
@@ -24,12 +23,14 @@
   
        <!-- Clock-->
        <script src="clock.js" defer></script>
+
+       <script src="music.js" defer></script>
     
   </head>
 
 <body>
 
-  <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+  <e class="bi bi-brightness-high-fill" id="toggleDark"></e>
 
   <div class="outer-wrapper">
     <div class="title">STUDYBOX</div>
@@ -48,18 +49,6 @@
   </div>
 
   
-
-  <button id="play">Play</button>
-   <script>
-        let play = document.getElementById("play");
-            function playMusic() {
-             let audio = new Audio("/studyboc/popup/lofi.mp3");
-             audio.play()
-             console.log("its playing")
-          }
-          play.addEventListener("click", playMusic);
-   </script>
-
   <script src="studyboxnote.js"></script>
   <script src="quotes.js"></script>
   <script src="search.js"></script>
@@ -80,66 +69,76 @@
     <span id="session">AM</span>
 </div>
 
-<div class="listen" style="text-align: center; padding-top: 10px">
-  <a href="https://www.youtube.com/watch?v=jfKfPfyJRdk?&autoplay=1">
-    <button>Start Lofi Playlist Here</button>
-  </a>
-</div>
+
 
 <video autoplay loop muted plays-inline>
     <source src="" type="video/mp4">
 </video>
 
-<audio id="player" src="./lofi.mp3"></audio>
-<div class="player">
-  <div class="control">
-    <i class="fas fa-play" id="playbtn"></i>
+
+
+<div class="pomodoWrapper">
+<div class="website">
+  
+
+  <div id="display" class="button">What to do?</div>
+
+  <div id="time">00:00</div>
+  
+  <div class="choice-grid">
+      <button id="work-btn" class="button choice-btn">Study</button>
+      <button id="short-break-btn" class="button choice-btn">Short break</button>
+      <button id="long-break-btn" class="button choice-btn">Long break</button>
   </div>
-  <div class="info">
-    Lofi 
-    <div class="bar">
-      <div id="progress"></div>
+  <div class="footer">
+      <div id="message">❤️ Thank you for using this timer.</div>
+  </div>
+  <div class="footer">
+    <div>Studied for... <span id="total-time">0hr 0min</span></div>
+  </div>
+</div>
+
+
+<script src="timer.js"></script>
+
+</div>
+<div class="music-container" id="music-container">
+  <div class="music-info">
+    <div class="title-container">
+      <h4 id="title"></h4>
+      <span id="progress-time" class="progress-time"></span>
+    </div>
+    <div class="progress-container" id="progress-container">
+      <div class="progress" id="progress"></div>
     </div>
   </div>
 
-  <div id="current">0:00</div>
+  <audio src="./studioghibli.mp3" id="audio"></audio>
+
+  <div class="img-container">
+    <img src="./studighibli.jpg" alt="-" id="cover" />
+  </div>
+
+  <div class="navigation">
+    <button id="prev" class="action-btn">
+      <i class="fas fa-backward"></i>
+    </button>
+    <button id="play" class="action-btn action-btn-big">
+      <i class="fas fa-play"></i>
+    </button>
+    <button id="next" class="action-btn">
+      <i class="fas fa-forward"></i>
+    </button>
+  </div>
 </div>
 
-<script src="./player.js"></script>
-
-
-
-<figure class="clock">
-  <div class="mins">0</div>
-  <div>:</div>
-  <div class="secs">00</div>
-  <audio
-    src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
-  ></audio>
-  <svg class="progress-ring" height="120" width="120">
-    <circle
-      class="progress-ring__circle"
-      stroke-width="8"
-      fill="transparent"
-      r="50"
-      cx="60"
-      cy="60"
-    />
-  </svg>
-</figure>
-
-<div class="btn-group">
-  <button class="start">start focus</button>
-  <button class="reset">reset</button>
-  <button class="pause">pause</button>
+<div class="playlist-container" id="playlist-container">
+  <h4>Playlist</h4>
+  <ul class="playlist" id="playlist"></ul>
 </div>
 
+<script src="music.js"></script>
 
-
-
-<script src="settings.js"></script>
-<script src="pomodoro.js"></script>
-<script src="progress.js"></script>
 
 
 </body>

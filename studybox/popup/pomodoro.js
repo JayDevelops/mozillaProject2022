@@ -1,67 +1,60 @@
-let workTittle = document.getElementById('work');
-let breakTittle = document.getElementById('break');
+const el = document.querySelector(".clock");
+const bell = document.querySelector("audio");
 
-let workTime = 25;
-let breakTime = 5;
+const mindiv = document.querySelector(".mins");
+const secdiv = document.querySelector(".secs");
 
-let seconds = "00"
+const startBtn = document.querySelector(".start");
+localStorage.setItem("btn", "focus");
 
-// display
-window.onload = () => {
-    document.getElementById('minutes').innerHTML = workTime;
-    document.getElementById('seconds').innerHTML = seconds;
+let initial, totalsecs, perc, paused, mins, seconds;
 
-    workTittle.classList.add('active');
-}
+startBtn.addEventListener("click", () => {
+  let btn = localStorage.getItem("btn");
 
-// start timer
-function start() {
-    // change button
-    document.getElementById('start').style.display = "none";
-    document.getElementById('reset').style.display = "block";
+  if (btn === "focus") {
+    mins = +localStorage.getItem("focusTime") || 1;
+  } else {
+    mins = +localStorage.getItem("breakTime") || 1;
+  }
 
-    // change the time
-    seconds = 59;
+  seconds = mins * 60;
+  totalsecs = mins * 60;
+  setTimeout(decremenT(), 60);
+  startBtn.style.transform = "scale(0)";
+  paused = false;
+});
 
-    let workMinutes = workTime - 1;
-    let breakMinutes = breakTime - 1;
+function decremenT() {
+  mindiv.textContent = Math.floor(seconds / 60);
+  secdiv.textContent = seconds % 60 > 9 ? seconds % 60 : `0${seconds % 60}`;
+  if (circle.classList.contains("danger")) {
+    circle.classList.remove("danger");
+  }
 
-    breakCount = 0;
-
-    // countdown
-    let timerFunction = () => {
-        //change the display
-        document.getElementById('minutes').innerHTML = workMinutes;
-        document.getElementById('seconds').innerHTML = seconds;
-
-        // start
-        seconds = seconds - 1;
-
-        if(seconds === 0) {
-            workMinutes = workMinutes - 1;
-            if(workMinutes === -1 ){
-                if(breakCount % 2 === 0) {
-                    // start break
-                    workMinutes = breakMinutes;
-                    breakCount++
-
-                    // change the painel
-                    workTittle.classList.remove('active');
-                    breakTittle.classList.add('active');
-                }else {
-                    // continue work
-                    workMinutes = workTime;
-                    breakCount++
-
-                    // change the painel
-                    breakTittle.classList.remove('active');
-                    workTittle.classList.add('active');
-                }
-            }
-            seconds = 59;
-        }
+  if (seconds > 0) {
+    perc = Math.ceil(((totalsecs - seconds) / totalsecs) * 100);
+    setProgress(perc);
+    seconds--;
+    initial = window.setTimeout("decremenT()", 1000);
+    if (seconds < 10) {
+      circle.classList.add("danger");
     }
+  } else {
+    mins = 0;
+    seconds = 0;
+    bell.play();
+    let btn = localStorage.getItem("btn");
 
-    // start countdown
-    setInterval(timerFunction, 1000); // 1000 = 1s
+    if (btn === "focus") {
+      startBtn.textContent = "start break";
+      startBtn.classList.add("break");
+      localStorage.setItem("btn", "break");
+    } else {
+      startBtn.classList.remove("break");
+      startBtn.textContent = "start focus";
+      localStorage.setItem("btn", "focus");
+    }
+    startBtn.style.transform = "scale(1)";
+  }
 }
