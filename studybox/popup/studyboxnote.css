@@ -20,6 +20,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .leftContent, .rightContent {
@@ -457,6 +458,9 @@ footer a {
 
 /* Use a media query to add a breakpoint at 800px: */
 @media screen and (max-width: 800px) {
+  body{
+    overflow: scroll;
+  }
   .leftContent, .middleContent, .rightContent {
     display: block;
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
@@ -501,8 +505,8 @@ footer a {
 
   .quoteContainer {
     position: absolute;
-    top: 10%;
-    display: none;
+    top: 20%;
+    visibility: hidden;
   }
 
   .outer-wrapper {
